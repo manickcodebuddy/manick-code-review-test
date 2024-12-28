@@ -11,6 +11,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("You are using ai code review");
 });
 app.get("/test", (req: Request, res: Response) => {
+  console.log("test endpoint hitting");
   res.send("Hello World");
 });
 
