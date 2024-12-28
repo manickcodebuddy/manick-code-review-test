@@ -16,7 +16,7 @@ app.get("/test", (req: Request, res: Response) => {
 
 app.post("/github-webhook", async (req, res) => {
   const event = req.headers["x-github-event"];
-
+  console.log("event", event);
   if (event === "pull_request") {
     const pullRequest =
       req.body.action === "opened" ? req.body.pull_request : null;
@@ -26,7 +26,7 @@ app.post("/github-webhook", async (req, res) => {
     }
   }
 
-  res.status(200).end();
+  res.status(200).json({ message: "Pull request received" });
 });
 
 app.listen(PORT, () => {
