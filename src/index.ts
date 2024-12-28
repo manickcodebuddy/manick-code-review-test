@@ -6,7 +6,6 @@ const app: Application = express();
 const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 app.use(json());
-// add a test get route
 app.get("/", (req: Request, res: Response) => {
   res.send("You are using ai code review");
 });
@@ -15,7 +14,6 @@ app.get("/test", (req: Request, res: Response) => {
   res.send("Hello World");
 });
 
-// GitHub webhook endpoint
 app.post("/github-webhook", async (req, res) => {
   const event = req.headers["x-github-event"];
 
