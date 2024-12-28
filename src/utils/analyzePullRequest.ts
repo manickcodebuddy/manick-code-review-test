@@ -13,6 +13,6 @@ const analyzePullRequest = async (pullRequest: any) => {
     }
   );
 
-  const files = response.data;
+  // const files = response.data;
   //   await analyzeFiles(files);
 };
